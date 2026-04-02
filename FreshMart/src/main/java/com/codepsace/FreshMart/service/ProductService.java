@@ -1,21 +1,21 @@
-package com.codespace.FreshMart.service;
+package com.codepsace.FreshMart.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.codespace.FreshMart.model.Product;
-import com.codespace.FreshMart.repository.ProductRepository;
+import com.codepsace.FreshMart.model.Product;
+import com.codepsace.FreshMart.repository.ProductRepository;
 
 @Service
 public class ProductService {
     /*
      * findAll
      * findById
-     * save
+     * save(Product product)
      * update
-     * delete
+     * delete(Long id)
      */
 
     private final ProductRepository repo;
@@ -38,7 +38,7 @@ public class ProductService {
 
     public Product update(Long id, Product product) {
         Product existing = repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product Not found"));
+        .orElseThrow(() -> new RuntimeException("Product Not found"));
 
         existing.setName(product.getName());
         existing.setPrice(product.getPrice());

@@ -7,9 +7,6 @@ import org.springframework.context.ApplicationContext;
 public class FreshMartApplication {
 
 	public static void main(String[] args) {
-		//SpringApplication.run(FreshMartApplication.class, args);
-		ApplicationContext context = SpringApplication.run(FreshMartApplication.class, args);
-        PaymentManager manager = context.getBean(PaymentManager.class);
-        manager.processPayment(5000);
+		SpringApplication.run(FreshMartApplication.class, args);
 	}
 }
